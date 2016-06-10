@@ -1,0 +1,15 @@
+<h1><%= @list.title %></h1>
+<table>
+	<% @list.attributes.each do |key, array| %>
+	<% if ["id","created_at","updated_at","title"].include? key then next else %>
+	<tr>
+		<td><strong><%= key.upcase %></strong></td>
+		<td><%= array %></td>
+	</tr>
+	<% end end %>
+	<tr>
+		<td><strong>MEMBERS</strong></td>
+		<td><%= @list.members.count %></td>
+	</tr>
+</table>
+<p><a class="button green">Create Google Group</a></p>

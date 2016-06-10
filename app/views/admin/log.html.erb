@@ -1,0 +1,70 @@
+<h1>Application Logs</h1>
+<form action="/admin/log" METHOD="GET">
+    <table>
+    <tr>
+        <td>Time</td>
+        <td>From <input name="from" type="text" size="20" class="datepicker" value="<%= params[:from] %>"></td>
+        <td>To <input name="to" type="text" size="20" class="datepicker" value="<%= params[:to] %>"></td>
+    </tr>
+    <tr>
+        <td>User</td>
+        <td colspan=2>
+            <select name="user">
+                <% @users.each do |u| %>
+                <option value="<%= u %>" <%= "selected" unless params[:user] != u %>><%= u || "none" %></option>
+                <% end %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Group</td>
+        <td colspan=2>
+            <select name="group">
+                <% @groups.each do |g| %>
+                <option value="<%= g %>" <%= "selected" unless params[:group] != g %>><%= g || "none" %></option>
+                <% end %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Listserv</td>
+        <td colspan=2>
+            <select name="list">
+                <% @lists.each do |l| %>
+                <option value="<%= l %>" <%= "selected" unless params[:list] != l %>><%= l || "none" %></option>
+                <% end %>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input class="green button" type="submit" value="Filter"></td>
+    </tr>
+
+</form>
+<table>
+    <tr>
+       <th>Time</th>
+       <th>User</th>
+       <th>Google Group</th>
+       <th>Listserv List</th>
+       <th>Message</th>
+    </tr>
+    <% @logs.each do |l| %>
+    <tr>
+       <td><%= l.created_at %></td>
+       <td><%= l.user %></td>
+       <td><%= l.group %></td>
+       <td><%= l.list %></td>
+       <td><%= l.message %></td>
+    </tr>
+    <% end %>
+</table>
+
+<script>
+$(function() {
+    $(".datepicker").datepicker();
+});
+</script>
+
+<a href="/admin/download_cron">Download latest cron log.</a>

@@ -1,0 +1,8 @@
+// Place all the styles related to the listservlists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.red {color:#CC3333;}
+.green {color:#33CC33;}
+table thead tr th, table tfoot tr th, table tfoot tr td, table tbody tr th, table tbody tr td, table tr td {
+  max-width: 26em !important;
+}

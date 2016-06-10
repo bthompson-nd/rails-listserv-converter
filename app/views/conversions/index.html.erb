@@ -1,0 +1,15 @@
+<h2>Conversions</h2>
+<table>
+<tr>
+	<th>Started</th>
+	<th>Name</th>
+	<th>Outcome</th>
+</tr>
+<% @conversions.each do |c| %>
+<tr>
+	<td><%= c.created_at %></td>
+	<td><%= c.title %></td>
+	<td><%= c.outcome %></td>
+</tr>
+<% end %>
+</table>

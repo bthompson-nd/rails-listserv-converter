@@ -1,0 +1,74 @@
+<h1 id="heading">My Listserv Mailing Lists</h1>
+
+<p><em>Last Updated <%= @last_update.to_s %></em></p>
+<%= image_tag("flowchart.jpg") %>
+
+<% if @listservlists.count == 0 %>
+    <p class="notification">You do not own any Listserv mailing lists.</p>
+<% else %>
+<table id="listservlists">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Members</th>
+    <th>Status</th>
+    <% if @admin %>
+        <th>Display/Hide</th>
+    <% end %>
+  </tr>
+  <% @listservlists.each do |list| %>
+  <tr id="<%= list.id %>">
+    <td><a href="/conversions/new?list_id=<%= list.id %>"><%= list.title %></a></td>
+    <td><%= list.address %></td>
+    <td><%= list.membercount %></td>
+    <td id="list_<%=list.id%>_status">
+      <% if list.conversion %>
+        <div class="statusdetail" data-id="<%=list.conversion.id%>">
+          <div class="progressbar">
+            <div class="progressbar_color" style="width:<%=
+            ((JSON::parse(list.conversion.status)['processed'].to_f /
+              JSON::parse(list.conversion.status)['size'].to_f) * 100)
+              %>%">
+            </div>
+          </div>
+          <span class="message"><%=JSON::parse(list.conversion.status)['message']%></span>
+          <div class="undo">
+            [<a onclick="delete_conversion(<%= list.conversion.id %>, '<%= list.conversion.address %>', <%= list.id %>);">Undo</a>] [<a onclick="refreshStatus('<%= list.conversion.id %>');">Refresh Status</a>]
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </td>
+
+    <% if @admin %>
+        <td>
+          <a onclick="toggle_visibility(<%= list.id %>);" class="toggle button">
+            <% if list.visible == false %>
+                Invisible
+                <% else %>
+                Visible
+                <% end %>
+            </a>
+        </td>
+    <% end %>
+  </tr>
+   <% end %>
+</table>
+<% end %>
+    <% if !@admin %>
+      <%= will_paginate @listservlists %>
+    <% end %>
+    <% if flash[:notice] %>
+<ol class="joyride-list" data-joyride>
+  <li data-id="heading" data-options="prev_button: false; next_button: false" data-text="">
+    <p><%= flash[:notice] %></p>
+  </li>
+</ol>
+<% end %>
+
+<script>
+$(window).load(function() {
+  $(document).foundation('joyride', 'start');
+
+});
+</script>

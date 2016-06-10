@@ -1,0 +1,41 @@
+<% if @listservlist.conversion %>
+    <h3>Sorry, you can't create this Google Group</h3>
+    <ul>
+      <li><strong>Status:</strong> <%= JSON::parse(@listservlist.conversion.status)['message'] %></li>
+      <li><strong>Google Group email:</strong> <%= @listservlist.conversion.address %></li>
+      <li><strong>This was done by:</strong> <%= @listservlist.conversion.owner %></li>
+    </ul>
+    <hr/>
+    <a class="button green" href="/listservlists">&lt;&lt; Go Back</a>
+<% else %>
+<h1><strong><%= @listservlist.title %></strong></h1>
+  <% if @superlists.count > 0 %>
+  <!-- <h4><span style="color:red;">Please convert the following lists first: <%= @superlists.join(', ') %></span></h4>-->
+  <% end %>
+  <%= form_tag("/conversions", method: "post") do %>
+    <%= hidden_field_tag :listservlist_id, @listservlist.id %>
+    <table>
+      <tr>
+        <th><%= label_tag(:title, "Title: ") %></th>
+        <td colspan="2"><%= text_field_tag(:title, @listservlist.title, size:40, maxlength: 60) %></td>
+        <td><span id="title_validity"></span></td>
+
+      </tr>
+      <tr>
+        <th><%= label_tag(:address, "Email Address: ") %></th>
+        <td><%= text_field_tag(:address, @listservlist.address[0..@listservlist.address.index('@')-1], size:40, maxlength: 60) %></td>
+        <td>-list@nd.edu</td>
+        <td><span id="address_validity"></span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input id="submit" type="submit" class="button green" value="Create my Google Group" disabled></td>
+        <td><a class="button red" href="/discontinue/<%= @listservlist.id %>">Discontinue this Listserv</a></td>
+      </table>
+  <% end %>
+<% end %>
+<script>
+  $(document).ready(function() {
+    validate();
+  });
+</script>

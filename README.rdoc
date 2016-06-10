@@ -1,0 +1,42 @@
+README
+======
+
+To get this application up and running:
+
+Dependencies
+------------
+ * Ruby 2.1.7+
+ * Rails 4.2.0+
+ * Unicorn 5.0.0+
+ * Redis 2.4.10+
+ * PostgreSQL Server 8.4.20+
+ * nginx 1.8.0+
+
+
+Configuration
+-------------
+1. Create a PostgreSQL database user with db_create permission.
+2. ...
+
+Set these environment variables:
+* LS2G_DB_NAME = PostgreSQL database name
+* LS2G_DB_USER = database username
+* LS2G_DB_PASS = database password
+* ...
+
+
+
+Database creation
+-----------------
+
+    $ rake db:create
+    $ rake db:migrate
+
+
+Services
+--------
+ (job queues, cache servers, search engines, etc.)
+
+Deployment instructions
+-----------------------
+* ...

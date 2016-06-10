@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Introduction</h1>
+<p>This tool allows you to build a Google Group from one of your Listserv lists.  Like Listserv, you will have a single email address (example-list@nd.edu) to send an email to everyone on your list.</p>
+
+<p>By switching to Google Groups for your email lists, you can enjoy several benefits:
+<ul>
+  <li>More reliable email delivery</li>
+  <li>Invite your list to calendar events</li>
+  <li>Share folders and documents with your list in Google Drive</li>
+  <li>Manage membership, roles, and email delivery settings more easily</li>
+  <li>Use any Notre Dame email address for a person</li>
+</ul>
+</p>
+
+<p>Here is how the process works:</p>
+<p><%= image_tag("flowchart.jpg") %></p>
+
+<h3>If you want to keep your email list:</h3>
+<ol>
+  <li>After you log in, you’ll see all the email lists where you are an owner</li>
+  <li>Pick a list that you want to build a Google Group from and click the name</li>
+  <li>Name your new Google Group and select your new list email address and click the green button</li>
+  <li>We’ll email you when your new Google Group is ready</li>
+  <li>Send a message to the list informing everyone that the list has a new email address</li>
+</ol>
+
+<h3>If you don’t need your email list:</h3>
+<ol>
+  <li>After you log in, click the name of the list that you want to discontinue.</li>
+  <li>Click the red Discontinue button</li>
+  <li>Confirm that you want to discontinue the list by clicking again</li>
+</ol>
+
+<p>For more information, on Google Groups, please visit this <a href="http://oithelp.nd.edu/gmail-and-google-apps/groups/">FAQ</a>.</p>
+
+<!-- <span id="remainingtime"></span> -->
+<a href="/listservlists" class="button green">Get Started</a>
+<hr/>
+<script>
+  CountDownTimer('06/01/2016', 'remainingtime');
+
+  function CountDownTimer(dt, id)
+  {
+    var end = new Date(dt);
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+      var now = new Date();
+      var distance = end - now;
+      if (distance < 0) {
+
+        clearInterval(timer);
+        document.getElementById(id).innerHTML = 'EXPIRED!';
+
+        return;
+      }
+      var days = Math.floor(distance / _day);
+      var hours = Math.floor((distance % _day) / _hour);
+      var minutes = Math.floor((distance % _hour) / _minute);
+      var seconds = Math.floor((distance % _minute) / _second);
+
+      document.getElementById(id).innerHTML = 'This tool will be available for another ';
+      document.getElementById(id).innerHTML += days + ' days, ';
+      document.getElementById(id).innerHTML += hours + ' hours, and ';
+      document.getElementById(id).innerHTML += minutes + ' minutes.';
+    }
+    showRemaining();
+    timer = setInterval(showRemaining, 1000);
+  }
+
+</script>

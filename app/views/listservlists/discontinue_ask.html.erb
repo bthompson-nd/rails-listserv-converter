@@ -1,0 +1,10 @@
+<h2 id="heading">Discontinue</h2>
+<h3>"<%=@list.title%>" &lt;<%= @list.address %>&gt;</h3>
+<hr/>
+<div style="max-width:70%; margin: 0 auto;">
+  <p>Are you sure you want to cease using <%= @list.address %>?</p>
+  <p>This will place the Listserv on hold without creating a new Google Group to replace it.</p>
+  <p>
+    <a href="/discontinue_confirm/<%= @list.id %>" style="background: #B00100; color: white; text-shadow:none; padding:10px;">Discontinue <%= @list.address %></a>
+  </p>
+</div>

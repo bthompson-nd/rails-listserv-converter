@@ -1,0 +1,33 @@
+<h1>Conversions</h1>
+<table>
+	<tr>
+		<th>Time</th>
+		<th>Listserv</th>
+		<th>Google Group</th>
+		<th>Initiated By</th>
+		<th>Status</th>
+	</tr>
+	<% @conversions.each do |c| %>
+	<tr id="conversion_<%=c.id%>">
+		<td><%= c.created_at %></td>
+		<td><%= c.listservlist.address %></td>
+		<td><%= c.address %></td>
+		<td><%= c.owner %></td>
+		<td id="list_<%= c.listservlist.id%>_status">
+      <div class="statusdetail" data-id="<%= c.id %>">
+        <div class="progressbar">
+          <div class="progressbar_color" style="width:<%=
+            ((JSON::parse(c.status)['processed'].to_f /
+              JSON::parse(c.status)['size'].to_f) * 100)
+              %>%">
+          </div>
+        </div>
+        <span class="message"><%=JSON::parse(c.status)['message']%></span>
+        <div class="undo">
+          [<a onclick="delete_conversion(<%= c.id %>, '<%= c.address %>', <%= c.listservlist.id %>);">Undo</a>] [<a onclick="refreshStatus('<%= c.id %>');">Refresh Status</a>]
+        </div>
+      </div>
+      </td>
+	</tr>
+	<% end %>
+</table>

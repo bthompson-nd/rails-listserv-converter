@@ -1,0 +1,495 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *= require jquery-ui.min.css
+ *= require_tree .
+ *= require_self
+ */
+
+$department: ooit;
+@import 'nd_foundation';
+
+ .site-title a{
+  display: inline-block;
+ }
+
+ .site-content {
+  padding-top: 0.25em;
+ }
+
+ .inline_title {
+  color: #002b5b;
+  font-size: 1.275em;
+  font-weight: 300;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+  text-rendering: optimizeLegibility;
+  font-family: GPC, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+ }
+
+ .google_contacts_logo {
+  background-image: image-url("contacts.png");
+  display: inline-block;
+  vertical-align: middle;
+  height: 64px;
+  width: 64px;
+ }
+.google_groups_logo {
+  background-image: image-url('groups.png');
+  -webkit-background-size:100%;
+  background-size:100%;
+  -moz-background-size:100%;
+  display: inline-block;
+  vertical-align: middle;
+  height: 48px;
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+ .nd-logo {
+  padding-bottom: 8px;
+  width: 38px;
+  margin: 0 4px;
+ }
+
+ .inline_title .nd-logo {
+  padding-bottom: 4px;
+  width: 21px;
+  margin: 0 2px;
+ }
+
+ .footer-wrapper {
+  background-color: #dcb43a;
+  border-top: 1px solid #ad8d2d;
+  margin-top: 2.5em;
+ }
+
+ #footer.column {
+   padding-bottom: 85px;
+ }
+
+ .site-footer {
+  background-color: #dcb43a;
+  border-top: 1px solid #ad8d2d;
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  width: 100%;
+ }
+
+ .ndmark {
+  float: right;
+  position: relative;
+  top: 0;
+  margin-right: 1em;
+  display: none;
+ }
+
+ .ndmark-image {
+   width: 200px;
+   margin-bottom: 1em;
+ }
+
+ .question, .contacts-loading-wrapper {
+  color: #999;
+  text-shadow: 0 1px rgba(255,255,255,0.6);
+  text-rendering: optimizeLegibility;
+  font-family: GP, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+  margin-bottom: 0.5em;
+ }
+
+.dept-ooit a {
+  width:444px;
+  background-image: url(//www.nd.edu/assets/images/brandbar/dept-ooit-white.png);
+}
+
+.button_wrapper {
+  text-align: right;
+  margin: 20px auto;
+  padding-right: 7%;
+}
+
+
+.button_wrapper .button {
+  margin: 0 15px 0 0;
+}
+
+.button {
+  display: inline-block;
+  background-color: #f5f5f5;
+  background-image: -webkit-linear-gradient(top, whitesmoke, #f1f1f1);
+  background-image: -moz-linear-gradient(top, whitesmoke, #f1f1f1);
+  background-image: -ms-linear-gradient(top, whitesmoke, #f1f1f1);
+  background-image: -o-linear-gradient(top, whitesmoke, #f1f1f1);
+  background-image: linear-gradient(top, whitesmoke, #f1f1f1);
+  color: #444;
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 5px;
+  cursor: default;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  /*height: 40px;*/
+  /*line-height: 40px;*/
+  min-width: 84px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+  text-rendering: optimizeLegibility;
+  font-family: GP, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.button:hover {
+  background-color: #F8F8F8;
+  background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -ms-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+  border: 1px solid #C6C6C6;
+  color: #333;
+  -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0px 1px 1px rgba(0,0,0,.1);
+}
+
+.button.green, .joyride-next-tip, .joyride-prev-tip {
+  background-color: #3D9400;
+  background-image: -webkit-linear-gradient(top,#3d9400,#398a00);
+  background-image: -moz-linear-gradient(top,#3d9400,#398a00);
+  background-image: -ms-linear-gradient(top,#3d9400,#398a00);
+  background-image: -o-linear-gradient(top,#3d9400,#398a00);
+  background-image: linear-gradient(top,#3d9400,#398a00);
+  border: 1px solid #29691D;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.button.green:hover, .joyride-next-tip:hover, .joyride-prev-tip:hover {
+  background-color: #3D9400 !important;
+  background-image: -webkit-linear-gradient(top,#3d9400,#368200);
+  background-image: -moz-linear-gradient(top,#3d9400,#368200);
+  background-image: -ms-linear-gradient(top,#3d9400,#368200);
+  background-image: -o-linear-gradient(top,#3d9400,#368200);
+  background-image: linear-gradient(top,#3d9400,#368200);
+  color: #F0FFFF;
+  border: 1px solid #2D6200;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.button.blue {
+  background-color: #4D90FE;
+  background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: -moz-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: -ms-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: -o-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: linear-gradient(top,#4d90fe,#4787ed);
+
+  border: 1px solid #3079ED;
+  color: white;
+}
+
+.button.blue:hover {
+  border: 1px solid #2F5BB7;
+
+  background-color: #357AE8;
+  background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -moz-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -ms-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: -o-linear-gradient(top,#4d90fe,#357ae8);
+  background-image: linear-gradient(top,#4d90fe,#357ae8);
+  color: #F0FFFF;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.button.green:active, .button.blue:active, .joyride-next-tip:active, .joyride-prev-tip:active  {
+  -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,.3);
+  -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,.3);
+  box-shadow: inset 0px 1px 2px rgba(0,0,0,.3);
+  color: #FFFAF0;
+}
+
+.button.red, .button.red:active, .button.red:hover {
+  background-color: #CC0000;
+  background-image: -webkit-linear-gradient(top, #CC0000, #FF2222);
+  background-image: -moz-linear-gradient(top, #CC0000, #FF2222);
+  background-image: -ms-linear-gradient(top, #CC0000, #FF2222);
+  background-image: -o-linear-gradient(top, #CC0000, #FF2222);
+  background-image: linear-gradient(top, #CC0000, #FF2222);
+  color:white;
+  text-shadow: 0 1px rgba(255, 127, 127, 0.6);
+}
+.button.red:hover {
+  color:#CC0000;
+  border: solid #CC0000 1px;
+}
+
+div.pagination
+
+.loading-spinner {
+  width: 64px;
+}
+
+.error {
+  border-color: #D8000C;
+  background-color: #FFBABA;
+}
+
+.errorText {
+  color: #D8000C;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.message-icon {
+  float: left;
+    margin-right: 4px;
+    margin-top: 6px;
+}
+
+#contact_list{
+  margin-bottom: 0.3em;
+}
+
+#contact_list table {
+  margin: auto;
+}
+
+
+#contact_list input {
+  margin: 0;
+}
+
+.hidden, .contact_template, .hidden_wrapper, .contacts-updating {
+  display: none;
+}
+
+.contact_list_spacer {
+  margin-bottom: 12em;
+}
+
+
+ul.pagination {
+  display: block;
+  height: 1.5rem;
+  margin-left: -0.3125rem; }
+  ul.pagination li {
+    height: 1.5rem;
+    color: #222222;
+    font-size: 0.875rem;
+    margin-left: 0.3125rem; }
+    ul.pagination li span {
+      display: block;
+      padding: 0.0625rem 0.625rem 0.0625rem;
+      color: #999999;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      text-decoration: underline;
+    cursor: pointer;
+      }
+    ul.pagination li:hover span,
+    ul.pagination li a:focus {
+      background: #e6e6e6; }
+    ul.pagination li.unavailable span {
+      cursor: default;
+      color: #999999; }
+    ul.pagination li.unavailable:hover span, ul.pagination li.unavailable span:focus {
+      background: transparent; }
+    ul.pagination li.current span {
+      background: #001B35;
+      color: white;
+      font-weight: bold;
+      cursor: default;
+      text-decoration: none; }
+      ul.pagination li.current span:hover, ul.pagination li.current span:focus {
+        background: #002b5b; }
+  ul.pagination li {
+    float: left;
+    display: block; }
+
+/* Pagination centred wrapper */
+.contacts-loading, .pagination-centered, .pagination-row {
+  text-align: center;
+}
+
+.pagination-centered ul.pagination li {
+   float: none;
+   display: inline-block;
+}
+.pagination {
+  margin: 0.5em 1em 0 1em;
+  padding: 0;
+}
+
+.pagination a, .pagination .previous_page, .pagination .next_page, .pagination .current {
+  padding: 0.5em;
+  border: solid black 1px;
+}
+
+.pagination .current {
+  background-color: rgb(220, 180, 58);
+}
+
+.pagination a:hover {
+  background-color: #EEEEEE;
+}
+
+.pagination-wrapper, .contacts-loading-wrapper {
+    display: inline-block;
+}
+
+.contacts-loading, .contacts-updating {
+  margin: 0.5em;
+  margin-top: 1.5em;
+}
+
+.contacts-loading-logo {
+  color: #002b5b;
+}
+
+.contacts-loading-image {
+  margin-right: 0.85em;
+  margin-bottom: 1em;
+  width: 64px;
+  display: inline-block;
+}
+
+.preferred {
+  color: rgb(0, 145, 0);
+}
+
+.joyride-next-tip, .joyride-prev-tip {
+  height: 30px;
+  line-height: 30px;
+  min-width: 19px;
+  text-align: right;
+  padding: 0 21px !important;
+}
+
+.button_wrapper {
+  margin-top: 15px;
+}
+
+#update_contacts {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.notification {
+  margin-bottom: 1em;
+}
+
+.notification #cleaned_notification {
+  color: #368200
+}
+
+#duplicate_list, #invalid_contacts {
+  margin-bottom: 0.1em;
+}
+
+.instructions {
+  padding-top: 0.2em;
+}
+
+.instructions ol {
+  margin-left: 3em;
+  margin-top: 0.4em;
+}
+
+.progress .meter {
+  background: #002b5b;
+}
+
+.pagination_group{
+  display: inline-block;
+  margin-bottom: 0.5em;
+}
+
+.contacts {
+  text-align: center;
+}
+
+.complementary_wrapper {
+  display: none;
+ }
+
+.progressbar {
+  width: 100%;
+  border: solid black 1px;
+  height: 1em;
+  padding: 0;
+}
+.progressbar_color {
+  height: 100%;
+  border: none;
+  background-color: green;
+  width: 0%;
+}
+
+table .button {
+  margin: auto;
+}
+
+@media all and (max-width: 500px) {
+  .site-content {
+   padding-top: 0;
+  }
+
+  .ancillary {
+     display: none;
+  }
+
+}
+
+@media all and (min-width: 1000px) {
+  .button_wrapper {
+    padding-right: 13%;
+  }
+
+}
+
+@media only screen and (min-width: 40.063em) {
+  .ndmark {
+    position: relative;
+    float: right;
+    display: inline-block;
+   }
+
+  .ndmark-image {
+    display: none;
+   }
+
+  .joyride_checkbox {
+     margin-left: -26px;
+     margin-top: -12px;
+   }
+
+}
+
+@media only screen and (min-width: 43.75em) {
+  .brandbar .row, .site-footer .row, .titlebar .row  {
+      max-width: 96%;
+   }
+
+   .indent {
+    margin-left: 1em;
+   }
+
+}
+
+#footer a { background-color: transparent; }

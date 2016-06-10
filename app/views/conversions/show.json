@@ -1,0 +1,1 @@
+{"percentage": <%=@percentage%>, "message": "<%=@message%>"}
